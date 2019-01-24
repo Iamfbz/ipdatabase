@@ -92,7 +92,9 @@ public class IpHelper {
         int rowLen = sheet.getPhysicalNumberOfRows();
         for (int i = 1; i < rowLen; i++) {
             Row row = sheet.getRow(i);
-            String province = row.getCell(0).getStringCellValue();
+            //String province = row.getCell(0).getStringCellValue();
+			String province = row.getCell(0).getStringCellValue()+"-"+row.getCell(1).getStringCellValue();
+
             Double a = row.getCell(2).getNumericCellValue();
             Integer ipCode = a.intValue();
             map.put(ipCode, province);
